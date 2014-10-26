@@ -2,11 +2,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  @IBOutlet weak var accelerationProgressBar: UIView!
+  @IBOutlet weak var accelerationProgressBar: UIProgressView!
   @IBOutlet weak var helloLabel: UILabel!
   @IBOutlet weak var accelerationLabel: UILabel!
   @IBOutlet weak var armLabel: UILabel!
-
+  @IBOutlet weak var gyroscopeLabel: UILabel!
+  
   var currentPose: TLMPose!
   
   override func viewDidLoad() {
@@ -83,14 +84,28 @@ class ViewController: UIViewController {
     let eventData = notification.userInfo as Dictionary<NSString, TLMOrientationEvent>
     let orientationEvent = eventData[kTLMKeyOrientationEvent]!
     
-    // TODO: NEED SOME SWIFT MAGIC TO DO ORIENTATION? MAYBE HYBRID OBJECTIVE C CODE?
+    let angles = GLKitPolyfill.getOrientation(orientationEvent)
+    let pitch = CGFloat(angles.pitch.radians)
+    let yaw = CGFloat(angles.yaw.radians)
+    let roll = CGFloat(angles.roll.radians)
+    let rotationAndPerspectiveTransform:CATransform3D = CATransform3DConcat(CATransform3DConcat(CATransform3DRotate (CATransform3DIdentity, pitch, -1.0, 0.0, 0.0), CATransform3DRotate(CATransform3DIdentity, yaw, 0.0, 1.0, 0.0)), CATransform3DRotate(CATransform3DIdentity, roll, 0.0, 0.0, -1.0))
+    
+    // Apply the rotation and perspective transform to helloLabel.
+    helloLabel.layer.transform = rotationAndPerspectiveTransform
   }
 
   func didRecieveAccelerationEvent(notification: NSNotification) {
     let eventData = notification.userInfo as Dictionary<NSString, TLMAccelerometerEvent>
     let accelerometerEvent = eventData[kTLMKeyAccelerometerEvent]!
 
-    // TODO: NEED SOME SWIFT MAGIC TO DO ACCELERATION? MAYBE HYBRID OBJECTIVE C CODE?
+    let acceleration = GLKitPolyfill.getAcceleration(accelerometerEvent);
+    accelerationProgressBar.progress = acceleration.magnitude / 4.0;
+
+    // Uncomment to show direction of acceleration
+    //    let x = acceleration.x
+    //    let y = acceleration.y
+    //    let z = acceleration.z
+    //    accelerationLabel.text = "Acceleration (\(x), \(y), \(z))"
   }
 
   func didChangePose(notification: NSNotification) {
@@ -129,7 +144,12 @@ class ViewController: UIViewController {
     let eventData = notification.userInfo as Dictionary<NSString, TLMGyroscopeEvent>
     let gyroEvent = eventData[kTLMKeyGyroscopeEvent]!
 
-    // TODO: NEED SOME SWIFT MAGIC TO DO GYROSCOPE MAGIC? MAYBE HYBRID OBJECTIVE C CODE?
+    let gyroData = GLKitPolyfill.getGyro(gyroEvent)
+    // Uncomment to display the gyro values
+    //    let x = gyroData.x
+    //    let y = gyroData.y
+    //    let z = gyroData.z
+    //    gyroscopeLabel.text = "Gyro: (\(x), \(y), \(z))"
   }
 }
 

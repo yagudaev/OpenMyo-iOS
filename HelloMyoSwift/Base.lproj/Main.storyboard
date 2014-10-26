@@ -42,7 +42,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Acceleration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xg5-vp-cjb">
-                                <rect key="frame" x="123" y="35" width="96" height="21"/>
+                                <rect key="frame" x="16" y="35" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4e-Bt-NHp">
+                                <rect key="frame" x="22" y="463" width="282" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uc2-TY-5wv">
+                                <rect key="frame" x="16" y="463" width="293" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -55,6 +67,7 @@
                         <outlet property="accelerationLabel" destination="xg5-vp-cjb" id="p3z-iC-ZDT"/>
                         <outlet property="accelerationProgressBar" destination="vkn-l2-C7Y" id="FK6-SN-VkV"/>
                         <outlet property="armLabel" destination="heX-Kw-XKs" id="epX-fC-Rz5"/>
+                        <outlet property="gyroscopeLabel" destination="uc2-TY-5wv" id="GbH-di-kvI"/>
                         <outlet property="helloLabel" destination="lmv-QN-5ba" id="jbg-p4-TI9"/>
                     </connections>
                 </viewController>
