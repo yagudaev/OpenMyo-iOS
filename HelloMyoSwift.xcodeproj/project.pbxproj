@@ -13,18 +13,8 @@
 		278DAE5119FCAEC500EB804B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 278DAE4F19FCAEC500EB804B /* Main.storyboard */; };
 		278DAE5319FCAEC500EB804B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278DAE5219FCAEC500EB804B /* Images.xcassets */; };
 		278DAE5619FCAEC500EB804B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 278DAE5419FCAEC500EB804B /* LaunchScreen.xib */; };
-		278DAE6219FCAEC500EB804B /* HelloMyoSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DAE6119FCAEC500EB804B /* HelloMyoSwiftTests.swift */; };
+		BEF4A774F5A7A6AB22605B28 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 869B6ED8684B18C6BE583A7E /* libPods.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		278DAE5C19FCAEC500EB804B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 278DAE3B19FCAEC500EB804B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 278DAE4219FCAEC500EB804B;
-			remoteInfo = HelloMyoSwift;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		278DAE4319FCAEC500EB804B /* HelloMyoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloMyoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,9 +25,10 @@
 		278DAE5019FCAEC500EB804B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		278DAE5219FCAEC500EB804B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		278DAE5519FCAEC500EB804B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		278DAE5B19FCAEC500EB804B /* HelloMyoSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloMyoSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		278DAE6019FCAEC500EB804B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		278DAE6119FCAEC500EB804B /* HelloMyoSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloMyoSwiftTests.swift; sourceTree = "<group>"; };
+		278DAE6C19FCB99900EB804B /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
+		869B6ED8684B18C6BE583A7E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA75DC7AF6F87C17E5EF92BB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DE50A6670235612D10857420 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,13 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		278DAE5819FCAEC500EB804B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				BEF4A774F5A7A6AB22605B28 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,9 +46,11 @@
 		278DAE3A19FCAEC500EB804B = {
 			isa = PBXGroup;
 			children = (
+				278DAE6C19FCB99900EB804B /* bridge.h */,
 				278DAE4519FCAEC500EB804B /* HelloMyoSwift */,
-				278DAE5E19FCAEC500EB804B /* HelloMyoSwiftTests */,
 				278DAE4419FCAEC500EB804B /* Products */,
+				3AD22711A769A134A2BF2C49 /* Pods */,
+				8AFF1003E13A87D48903FBD2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,7 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				278DAE4319FCAEC500EB804B /* HelloMyoSwift.app */,
-				278DAE5B19FCAEC500EB804B /* HelloMyoSwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,21 +84,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		278DAE5E19FCAEC500EB804B /* HelloMyoSwiftTests */ = {
+		3AD22711A769A134A2BF2C49 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				278DAE6119FCAEC500EB804B /* HelloMyoSwiftTests.swift */,
-				278DAE5F19FCAEC500EB804B /* Supporting Files */,
+				DA75DC7AF6F87C17E5EF92BB /* Pods.debug.xcconfig */,
+				DE50A6670235612D10857420 /* Pods.release.xcconfig */,
 			);
-			path = HelloMyoSwiftTests;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		278DAE5F19FCAEC500EB804B /* Supporting Files */ = {
+		8AFF1003E13A87D48903FBD2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				278DAE6019FCAEC500EB804B /* Info.plist */,
+				869B6ED8684B18C6BE583A7E /* libPods.a */,
 			);
-			name = "Supporting Files";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 278DAE6519FCAEC500EB804B /* Build configuration list for PBXNativeTarget "HelloMyoSwift" */;
 			buildPhases = (
+				59ECEE1FC29B65C32758D61B /* Check Pods Manifest.lock */,
 				278DAE3F19FCAEC500EB804B /* Sources */,
 				278DAE4019FCAEC500EB804B /* Frameworks */,
 				278DAE4119FCAEC500EB804B /* Resources */,
+				5DB8FE451FB7BF95E516FAB4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,24 +122,6 @@
 			productName = HelloMyoSwift;
 			productReference = 278DAE4319FCAEC500EB804B /* HelloMyoSwift.app */;
 			productType = "com.apple.product-type.application";
-		};
-		278DAE5A19FCAEC500EB804B /* HelloMyoSwiftTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 278DAE6819FCAEC500EB804B /* Build configuration list for PBXNativeTarget "HelloMyoSwiftTests" */;
-			buildPhases = (
-				278DAE5719FCAEC500EB804B /* Sources */,
-				278DAE5819FCAEC500EB804B /* Frameworks */,
-				278DAE5919FCAEC500EB804B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				278DAE5D19FCAEC500EB804B /* PBXTargetDependency */,
-			);
-			name = HelloMyoSwiftTests;
-			productName = HelloMyoSwiftTests;
-			productReference = 278DAE5B19FCAEC500EB804B /* HelloMyoSwiftTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -164,10 +134,6 @@
 				TargetAttributes = {
 					278DAE4219FCAEC500EB804B = {
 						CreatedOnToolsVersion = 6.1;
-					};
-					278DAE5A19FCAEC500EB804B = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 278DAE4219FCAEC500EB804B;
 					};
 				};
 			};
@@ -185,7 +151,6 @@
 			projectRoot = "";
 			targets = (
 				278DAE4219FCAEC500EB804B /* HelloMyoSwift */,
-				278DAE5A19FCAEC500EB804B /* HelloMyoSwiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -201,14 +166,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		278DAE5919FCAEC500EB804B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		59ECEE1FC29B65C32758D61B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
-/* End PBXResourcesBuildPhase section */
+		5DB8FE451FB7BF95E516FAB4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		278DAE3F19FCAEC500EB804B /* Sources */ = {
@@ -221,23 +212,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		278DAE5719FCAEC500EB804B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				278DAE6219FCAEC500EB804B /* HelloMyoSwiftTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		278DAE5D19FCAEC500EB804B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 278DAE4219FCAEC500EB804B /* HelloMyoSwift */;
-			targetProxy = 278DAE5C19FCAEC500EB804B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		278DAE4F19FCAEC500EB804B /* Main.storyboard */ = {
@@ -340,55 +315,25 @@
 		};
 		278DAE6619FCAEC500EB804B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA75DC7AF6F87C17E5EF92BB /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HelloMyoSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = bridge.h;
 			};
 			name = Debug;
 		};
 		278DAE6719FCAEC500EB804B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE50A6670235612D10857420 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HelloMyoSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		278DAE6919FCAEC500EB804B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = HelloMyoSwiftTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelloMyoSwift.app/HelloMyoSwift";
-			};
-			name = Debug;
-		};
-		278DAE6A19FCAEC500EB804B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = HelloMyoSwiftTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelloMyoSwift.app/HelloMyoSwift";
+				SWIFT_OBJC_BRIDGING_HEADER = bridge.h;
 			};
 			name = Release;
 		};
@@ -411,14 +356,7 @@
 				278DAE6719FCAEC500EB804B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		278DAE6819FCAEC500EB804B /* Build configuration list for PBXNativeTarget "HelloMyoSwiftTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				278DAE6919FCAEC500EB804B /* Debug */,
-				278DAE6A19FCAEC500EB804B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -1,0 +1,14 @@
+PODS:
+  - MyoSDK (0.1.1)
+
+DEPENDENCIES:
+  - MyoSDK (from `https://github.com/yagudaev/MyoSDK.git`)
+
+EXTERNAL SOURCES:
+  MyoSDK:
+    :git: https://github.com/yagudaev/MyoSDK.git
+
+SPEC CHECKSUMS:
+  MyoSDK: 955471067affdcf5415187af3472490e6634fa7c
+
+COCOAPODS: 0.34.4
