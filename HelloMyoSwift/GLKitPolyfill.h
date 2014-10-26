@@ -1,11 +1,3 @@
-//
-//  GLKitPolyfill.h
-//  HelloMyoSwift
-//
-//  Created by Michael Yagudaev on 2014-10-26.
-//  Copyright (c) 2014 Michael Yagudaev. All rights reserved.
-//
-
 #ifndef HelloMyoSwift_GLKitPolyfill_h
 #define HelloMyoSwift_GLKitPolyfill_h
 

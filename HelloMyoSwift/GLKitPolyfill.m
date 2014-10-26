@@ -1,11 +1,3 @@
-//
-//  GLKitPolyfill.m
-//  HelloMyoSwift
-//
-//  Created by Michael Yagudaev on 2014-10-26.
-//  Copyright (c) 2014 Michael Yagudaev. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import "GLKitPolyfill.h"
 

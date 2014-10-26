@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  HelloMyoSwift
-//
-//  Created by Michael Yagudaev on 2014-10-25.
-//  Copyright (c) 2014 Michael Yagudaev. All rights reserved.
-//
-
 import UIKit
 import CoreData
 
