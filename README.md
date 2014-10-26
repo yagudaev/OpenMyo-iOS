@@ -1,6 +1,6 @@
 # MYO Demo Application for iOS
 
-Re-write of the original (Myo iOS app)[https://developer.thalmic.com/downloads] that comes with the SDK.
+Re-write of the original [Myo iOS app](https://developer.thalmic.com/downloads) that comes with the SDK.
 
 # Changes
 
