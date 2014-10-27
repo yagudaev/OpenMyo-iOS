@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-JBChartView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MyoSDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>904173462DF1EC6EAC1A67FE</key>
+		<key>87271F6680A590335C27435B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C96CCB0FD36797CB6C888EBC</key>
+		<key>8DC881464DB62E761518FF8F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BE8E477DEBA58D9C5BBA5EBB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

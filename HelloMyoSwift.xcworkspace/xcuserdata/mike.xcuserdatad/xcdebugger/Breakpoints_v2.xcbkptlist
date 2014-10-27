@@ -6,16 +6,274 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenMyo/ViewController.swift"
+            timestampString = "436072304.143959"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "didTapSettings(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OpenMyo_iOS.ViewController.didTapSettings (OpenMyo_iOS.ViewController)(Swift.AnyObject) -&gt; ()"
+                  moduleName = "OpenMyo-iOS"
+                  urlString = "file:///Users/mike/projects/OpenMyo-iOS/OpenMyo/ViewController.swift"
+                  timestampString = "436069466.502418"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "reabstraction thunk helper from @callee_owned (@in ()) -&gt; (@out ()) to @callee_owned () -&gt; (@unowned ())"
+                  moduleName = "OpenMyo-iOS"
+                  urlString = "file:///Users/mike/projects/OpenMyo-iOS/OpenMyo/ViewController.swift"
+                  timestampString = "436069466.502585"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "reabstraction thunk helper from @callee_owned () -&gt; (@unowned ()) to @callee_unowned @objc_block () -&gt; (@unowned ())"
+                  moduleName = "OpenMyo-iOS"
+                  urlString = "file:///Users/mike/projects/OpenMyo-iOS/OpenMyo/ViewController.swift"
+                  timestampString = "436069466.502717"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HelloMyoSwift/ViewController.swift"
-            timestampString = "436004384.808181"
+            filePath = "OpenMyo/ViewController.swift"
+            timestampString = "436063577.19035"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "didRecieveOrientationEvent(_:)"
+            startingLineNumber = "3"
+            endingLineNumber = "3"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OpenMyo_iOS.ViewController.__deallocating_deinit"
+                  moduleName = "OpenMyo-iOS"
+                  urlString = "file:///Users/mike/projects/OpenMyo-iOS/OpenMyo/ViewController.swift"
+                  timestampString = "436072583.419408"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "3"
+                  endingLineNumber = "3"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "@objc OpenMyo_iOS.ViewController.__ivar_destroyer"
+                  moduleName = "OpenMyo-iOS"
+                  urlString = "file:///Users/mike/projects/OpenMyo-iOS/OpenMyo/ViewController.swift"
+                  timestampString = "436072583.419621"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "3"
+                  endingLineNumber = "3"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenMyo/ViewController.swift"
+            timestampString = "436072168.467259"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OpenMyo_iOS.ViewController.accelerationData.getter : Swift.Array&lt;Swift.Double&gt;"
+                  moduleName = "OpenMyo-iOS"
+                  urlString = "file:///Users/mike/projects/OpenMyo-iOS/OpenMyo/ViewController.swift"
+                  timestampString = "436068917.118374"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OpenMyo_iOS.ViewController.accelerationData.setter : Swift.Array&lt;Swift.Double&gt;"
+                  moduleName = "OpenMyo-iOS"
+                  urlString = "file:///Users/mike/projects/OpenMyo-iOS/OpenMyo/ViewController.swift"
+                  timestampString = "436068917.118527"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OpenMyo_iOS.ViewController.init (OpenMyo_iOS.ViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; OpenMyo_iOS.ViewController"
+                  moduleName = "OpenMyo-iOS"
+                  urlString = "file:///Users/mike/projects/OpenMyo-iOS/OpenMyo/ViewController.swift"
+                  timestampString = "436068917.118843"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "410">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OpenMyo_iOS.ViewController.init (OpenMyo_iOS.ViewController.Type)() -&gt; OpenMyo_iOS.ViewController"
+                  moduleName = "OpenMyo-iOS"
+                  urlString = "file:///Users/mike/projects/OpenMyo-iOS/OpenMyo/ViewController.swift"
+                  timestampString = "436068917.118992"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "341">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OpenMyo_iOS.ViewController.init (OpenMyo_iOS.ViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; OpenMyo_iOS.ViewController"
+                  moduleName = "OpenMyo-iOS"
+                  urlString = "file:///Users/mike/projects/OpenMyo-iOS/OpenMyo/ViewController.swift"
+                  timestampString = "436068917.119144"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "361">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenMyo/ViewController.swift"
+            timestampString = "436072304.143959"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "didRecieveAccelerationEvent(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenMyo/ViewController.swift"
+            timestampString = "436072304.143959"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "didChangePose(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenMyo/ViewController.swift"
+            timestampString = "436072304.143959"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "numberOfLinesInLineChartView(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenMyo/ViewController.swift"
+            timestampString = "436072304.143959"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "lineChartView(_:verticalValueForHorizontalIndex:atLineIndex:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenMyo/ViewController.swift"
+            timestampString = "436072304.143959"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "lineChartView(_:numberOfVerticalValuesAtLineIndex:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

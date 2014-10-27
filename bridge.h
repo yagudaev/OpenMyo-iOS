@@ -1,7 +1,12 @@
-#ifndef HelloMyoSwift_bridge_h
-#define HelloMyoSwift_bridge_h
+#ifndef OpenMyoiOS_bridge_h
+#define OpenMyoiOS_bridge_h
 
 #import <MyoKit/MyoKit.h>
-#import "HelloMyoSwift/GLKitPolyfill.h"
+#import "OpenMyo/GLKitPolyfill.h"
+
+#import <UIKit/UIKit.h>
+#import "JBChartView/JBChartView.h"
+#import "JBChartView/JBBarChartView.h"
+#import "JBChartView/JBLineChartView.h"
 
 #endif
