@@ -7,15 +7,23 @@ class ViewController: UIViewController {
   
   var currentPose: TLMPose!
   var accelerationGraphView: AccelerationGraphView!
+  var orientationGraphView: OrientationGraphView!
+  var gyroscopeGraphView: GyroscopeGraphView!
   var timer:Timer!
   
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    accelerationGraphView = AccelerationGraphView(frame: CGRectMake(0, 60, 320, 140))
+    accelerationGraphView = AccelerationGraphView(frame: CGRectMake(0, 60, 320, 130))
     view.addSubview(accelerationGraphView)
+
+    orientationGraphView = OrientationGraphView(frame: CGRectMake(0, 210, 320, 130))
+    view.addSubview(orientationGraphView)
     
-    timer = Timer.repeat(after: 0.005, updateAccelerationGraph)
+    gyroscopeGraphView = GyroscopeGraphView(frame: CGRectMake(0, 350, 320, 130))
+    view.addSubview(gyroscopeGraphView)
+    
+    timer = Timer.repeat(after: 0.005, updateGraphs)
     
     bindToMyoEvents()
   }
@@ -30,18 +38,22 @@ class ViewController: UIViewController {
     notifer.addObserver(self, selector: "didRecognizeArm:", name: TLMMyoDidReceiveArmRecognizedEventNotification, object: nil)
     // Posted whenever Myo loses its calibration (when Myo is taken off, or moved enough on the user's arm)
     notifer.addObserver(self, selector: "didLoseArm:", name: TLMMyoDidReceiveArmLostEventNotification, object: nil)
-    
-    // Notifications for orientation event are posted at a rate of 50 Hz.
-    notifer.addObserver(self, selector: "didRecieveOrientationEvent:", name: TLMMyoDidReceiveOrientationEventNotification, object: nil)
 
     // Posted when one of the pre-configued geatures is recognized (e.g. Fist, Wave In, Wave Out, etc)
     notifer.addObserver(self, selector: "didChangePose:", name: TLMMyoDidReceivePoseChangedNotification, object: nil)
-    notifer.addObserver(self, selector: "didRecieveGyroScopeEvent:", name: TLMMyoDidReceiveGyroscopeEventNotification, object: nil)
   }
   
-  func updateAccelerationGraph() {
+  func updateGraphs() {
     if accelerationGraphView.accelerationData.count > 0 {
       accelerationGraphView.reloadData()
+    }
+    
+    if orientationGraphView.data.count > 0 {
+      orientationGraphView.reloadData()
+    }
+    
+    if gyroscopeGraphView.data.count > 0 {
+      gyroscopeGraphView.reloadData()
     }
   }
 
@@ -95,20 +107,6 @@ class ViewController: UIViewController {
     armEvent.myo.vibrateWithLength(.Short)
   }
 
-  func didRecieveOrientationEvent(notification: NSNotification) {
-    let eventData = notification.userInfo as Dictionary<NSString, TLMOrientationEvent>
-    let orientationEvent = eventData[kTLMKeyOrientationEvent]!
-    
-    let angles = GLKitPolyfill.getOrientation(orientationEvent)
-    let pitch = CGFloat(angles.pitch.radians)
-    let yaw = CGFloat(angles.yaw.radians)
-    let roll = CGFloat(angles.roll.radians)
-    let rotationAndPerspectiveTransform:CATransform3D = CATransform3DConcat(CATransform3DConcat(CATransform3DRotate (CATransform3DIdentity, pitch, -1.0, 0.0, 0.0), CATransform3DRotate(CATransform3DIdentity, yaw, 0.0, 1.0, 0.0)), CATransform3DRotate(CATransform3DIdentity, roll, 0.0, 0.0, -1.0))
-    
-    // Apply the rotation and perspective transform to helloLabel.
-    helloLabel.layer.transform = rotationAndPerspectiveTransform
-  }
-
   func didChangePose(notification: NSNotification) {
     let eventData = notification.userInfo as Dictionary<NSString, TLMPose>
     currentPose = eventData[kTLMKeyPose]!
@@ -139,18 +137,6 @@ class ViewController: UIViewController {
       helloLabel.font = UIFont(name: "Helvetica Neue", size: 50)
       helloLabel.textColor = UIColor.blackColor()
     }
-  }
-
-  func didRecieveGyroScopeEvent(notification: NSNotification) {
-    let eventData = notification.userInfo as Dictionary<NSString, TLMGyroscopeEvent>
-    let gyroEvent = eventData[kTLMKeyGyroscopeEvent]!
-
-    let gyroData = GLKitPolyfill.getGyro(gyroEvent)
-    // Uncomment to display the gyro values
-    //    let x = gyroData.x
-    //    let y = gyroData.y
-    //    let z = gyroData.z
-    //    gyroscopeLabel.text = "Gyro: (\(x), \(y), \(z))"
   }
 }
 
