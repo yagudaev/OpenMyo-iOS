@@ -11,11 +11,13 @@
 		270BA9A019FD18CB0066528B /* GLKitPolyfill.m in Sources */ = {isa = PBXBuildFile; fileRef = 270BA99F19FD18CB0066528B /* GLKitPolyfill.m */; };
 		278DAE4919FCAEC500EB804B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DAE4819FCAEC500EB804B /* AppDelegate.swift */; };
 		278DAE4C19FCAEC500EB804B /* HelloMyoSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 278DAE4A19FCAEC500EB804B /* HelloMyoSwift.xcdatamodeld */; };
-		278DAE4E19FCAEC500EB804B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DAE4D19FCAEC500EB804B /* ViewController.swift */; };
 		278DAE5119FCAEC500EB804B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 278DAE4F19FCAEC500EB804B /* Main.storyboard */; };
 		278DAE5319FCAEC500EB804B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278DAE5219FCAEC500EB804B /* Images.xcassets */; };
 		278DAE5619FCAEC500EB804B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 278DAE5419FCAEC500EB804B /* LaunchScreen.xib */; };
-		27A4672619FDEECC00B0093F /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4672519FDEECC00B0093F /* Timer.swift */; };
+		27A4672919FE29E800B0093F /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4672819FE29E800B0093F /* Timer.swift */; };
+		27A4672D19FE29FC00B0093F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4672B19FE29FC00B0093F /* ViewController.swift */; };
+		27A4672F19FE2A3A00B0093F /* AccelerationGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4672E19FE2A3A00B0093F /* AccelerationGraphView.swift */; };
+		27A4673119FE3C7000B0093F /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4673019FE3C7000B0093F /* RingBuffer.swift */; };
 		BEF4A774F5A7A6AB22605B28 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 869B6ED8684B18C6BE583A7E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -27,12 +29,14 @@
 		278DAE4719FCAEC500EB804B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		278DAE4819FCAEC500EB804B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		278DAE4B19FCAEC500EB804B /* HelloMyoSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HelloMyoSwift.xcdatamodel; sourceTree = "<group>"; };
-		278DAE4D19FCAEC500EB804B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		278DAE5019FCAEC500EB804B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		278DAE5219FCAEC500EB804B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		278DAE5519FCAEC500EB804B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		278DAE6C19FCB99900EB804B /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
-		27A4672519FDEECC00B0093F /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		27A4672819FE29E800B0093F /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		27A4672B19FE29FC00B0093F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		27A4672E19FE2A3A00B0093F /* AccelerationGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerationGraphView.swift; sourceTree = "<group>"; };
+		27A4673019FE3C7000B0093F /* RingBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
 		869B6ED8684B18C6BE583A7E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA75DC7AF6F87C17E5EF92BB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DE50A6670235612D10857420 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -73,11 +77,12 @@
 		278DAE4519FCAEC500EB804B /* OpenMyo */ = {
 			isa = PBXGroup;
 			children = (
-				27A4672419FDEEA600B0093F /* Lib */,
+				27A4672A19FE29FC00B0093F /* Controllers */,
+				27A4672C19FE29FC00B0093F /* Views */,
+				27A4672719FE29E800B0093F /* Lib */,
 				270BA99E19FD18CB0066528B /* GLKitPolyfill.h */,
 				270BA99F19FD18CB0066528B /* GLKitPolyfill.m */,
 				278DAE4819FCAEC500EB804B /* AppDelegate.swift */,
-				278DAE4D19FCAEC500EB804B /* ViewController.swift */,
 				278DAE4F19FCAEC500EB804B /* Main.storyboard */,
 				278DAE5219FCAEC500EB804B /* Images.xcassets */,
 				278DAE5419FCAEC500EB804B /* LaunchScreen.xib */,
@@ -95,12 +100,29 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		27A4672419FDEEA600B0093F /* Lib */ = {
+		27A4672719FE29E800B0093F /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				27A4672519FDEECC00B0093F /* Timer.swift */,
+				27A4672819FE29E800B0093F /* Timer.swift */,
+				27A4673019FE3C7000B0093F /* RingBuffer.swift */,
 			);
-			name = Lib;
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		27A4672A19FE29FC00B0093F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				27A4672B19FE29FC00B0093F /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		27A4672C19FE29FC00B0093F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27A4672E19FE2A3A00B0093F /* AccelerationGraphView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		3AD22711A769A134A2BF2C49 /* Pods */ = {
@@ -225,10 +247,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				278DAE4E19FCAEC500EB804B /* ViewController.swift in Sources */,
+				27A4672D19FE29FC00B0093F /* ViewController.swift in Sources */,
+				27A4672F19FE2A3A00B0093F /* AccelerationGraphView.swift in Sources */,
 				278DAE4C19FCAEC500EB804B /* HelloMyoSwift.xcdatamodeld in Sources */,
 				270BA9A019FD18CB0066528B /* GLKitPolyfill.m in Sources */,
-				27A4672619FDEECC00B0093F /* Timer.swift in Sources */,
+				27A4672919FE29E800B0093F /* Timer.swift in Sources */,
+				27A4673119FE3C7000B0093F /* RingBuffer.swift in Sources */,
 				270BA99719FD04970066528B /* README.md in Sources */,
 				278DAE4919FCAEC500EB804B /* AppDelegate.swift in Sources */,
 			);

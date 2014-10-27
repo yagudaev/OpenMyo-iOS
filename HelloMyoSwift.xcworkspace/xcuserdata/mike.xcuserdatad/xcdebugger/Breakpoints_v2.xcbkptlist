@@ -77,36 +77,6 @@
             endingLineNumber = "3"
             landmarkName = "ViewController"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OpenMyo_iOS.ViewController.__deallocating_deinit"
-                  moduleName = "OpenMyo-iOS"
-                  urlString = "file:///Users/mike/projects/OpenMyo-iOS/OpenMyo/ViewController.swift"
-                  timestampString = "436072583.419408"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "3"
-                  endingLineNumber = "3"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "@objc OpenMyo_iOS.ViewController.__ivar_destroyer"
-                  moduleName = "OpenMyo-iOS"
-                  urlString = "file:///Users/mike/projects/OpenMyo-iOS/OpenMyo/ViewController.swift"
-                  timestampString = "436072583.419621"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "3"
-                  endingLineNumber = "3"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

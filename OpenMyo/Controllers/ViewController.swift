@@ -1,28 +1,19 @@
 import UIKit
 
-class ViewController: UIViewController, JBLineChartViewDataSource, JBLineChartViewDelegate {
+class ViewController: UIViewController {
 
   @IBOutlet weak var helloLabel: UILabel!
   @IBOutlet weak var armLabel: UILabel!
   
   var currentPose: TLMPose!
-  var lineChartView: JBLineChartView!
-  var accelerationData = [Double]()
+  var accelerationGraphView: AccelerationGraphView!
   var timer:Timer!
-  var accelerationIndex = 0
-  
-  let MAX_ARRAY_SIZE = 1500
   
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    lineChartView = JBLineChartView()
-    lineChartView.dataSource = self
-    lineChartView.delegate = self
-    
-    lineChartView.frame = CGRectMake(0, 50, 320, 200)
-    lineChartView.reloadData()
-    view.addSubview(lineChartView)
+    accelerationGraphView = AccelerationGraphView(frame: CGRectMake(0, 60, 320, 140))
+    view.addSubview(accelerationGraphView)
     
     timer = Timer.repeat(after: 0.005, updateAccelerationGraph)
     
@@ -42,53 +33,21 @@ class ViewController: UIViewController, JBLineChartViewDataSource, JBLineChartVi
     
     // Notifications for orientation event are posted at a rate of 50 Hz.
     notifer.addObserver(self, selector: "didRecieveOrientationEvent:", name: TLMMyoDidReceiveOrientationEventNotification, object: nil)
-    // Notifications accelerometer event are posted at a rate of 50 Hz.
-    notifer.addObserver(self, selector: "didRecieveAccelerationEvent:", name: TLMMyoDidReceiveAccelerometerEventNotification, object: nil)
+
     // Posted when one of the pre-configued geatures is recognized (e.g. Fist, Wave In, Wave Out, etc)
     notifer.addObserver(self, selector: "didChangePose:", name: TLMMyoDidReceivePoseChangedNotification, object: nil)
     notifer.addObserver(self, selector: "didRecieveGyroScopeEvent:", name: TLMMyoDidReceiveGyroscopeEventNotification, object: nil)
   }
   
   func updateAccelerationGraph() {
-    if accelerationData.count > 0 {
-      lineChartView.reloadData()
+    if accelerationGraphView.accelerationData.count > 0 {
+      accelerationGraphView.reloadData()
     }
-  }
-  
-  func numberOfLinesInLineChartView(lineChartView: JBLineChartView) -> UInt {
-    return 1
-  }
-  
-  /**
-  *  Vertical value for a line point at a given index (left to right). There is no ceiling on the the height;
-  *  the chart will automatically normalize all values between the overal min and max heights.
-  *
-  *  @param lineChartView    The line chart object requesting this information.
-  *  @param horizontalIndex  The 0-based horizontal index of a selection point (left to right, x-axis).
-  *  @param lineIndex        An index number identifying the closest line in the chart to the current touch point.
-  *
-  *  @return The y-axis value of the supplied line index (x-axis)
-  */
-  func lineChartView(lineChartView:JBLineChartView, verticalValueForHorizontalIndex horizontalIndex:UInt, atLineIndex lineIndex:UInt) -> CGFloat {
-    let value = accelerationData[Int(horizontalIndex)]
-    return CGFloat(value)
-  }
-  
-  /**
-  *  Returns the number of vertical values for a particular line at lineIndex within the chart.
-  *
-  *  @param lineChartView    The line chart object requesting this information.
-  *  @param lineIndex        An index number identifying a line in the chart.
-  *
-  *  @return The number of vertical values for a given line in the line chart.
-  */
-  func lineChartView(lineChartView: JBLineChartView, numberOfVerticalValuesAtLineIndex lineIndex: UInt) -> UInt {
-    return UInt(accelerationData.count)
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    accelerationData = [] // clear the data
+    accelerationGraphView.accelerationData = [] // clear the data
   }
   
   @IBAction func didTapSettings(sender: AnyObject) {
@@ -150,24 +109,6 @@ class ViewController: UIViewController, JBLineChartViewDataSource, JBLineChartVi
     helloLabel.layer.transform = rotationAndPerspectiveTransform
   }
 
-  func didRecieveAccelerationEvent(notification: NSNotification) {
-    let eventData = notification.userInfo as Dictionary<NSString, TLMAccelerometerEvent>
-    let accelerometerEvent = eventData[kTLMKeyAccelerometerEvent]!
-
-    let acceleration = GLKitPolyfill.getAcceleration(accelerometerEvent)
-
-    accelerationData[accelerationIndex] = Double(acceleration.magnitude)
-    
-    accelerationIndex += 1
-    accelerationIndex = accelerationIndex % MAX_ARRAY_SIZE
-    
-    // Uncomment to show direction of acceleration
-    //    let x = acceleration.x
-    //    let y = acceleration.y
-    //    let z = acceleration.z
-    //    accelerationLabel.text = "Acceleration (\(x), \(y), \(z))"
-  }
-
   func didChangePose(notification: NSNotification) {
     let eventData = notification.userInfo as Dictionary<NSString, TLMPose>
     currentPose = eventData[kTLMKeyPose]!
@@ -210,20 +151,6 @@ class ViewController: UIViewController, JBLineChartViewDataSource, JBLineChartVi
     //    let y = gyroData.y
     //    let z = gyroData.z
     //    gyroscopeLabel.text = "Gyro: (\(x), \(y), \(z))"
-  }
-  
-  /**
-  *  Returns the width of particular line at lineIndex within the chart.
-  *
-  *  Default: 5 points.
-  *
-  *  @param lineChartView    The line chart object requesting this information.
-  *  @param lineIndex        An index number identifying a line in the chart.
-  *
-  *  @return The width to be used to draw a line in the chart.
-  */
-  func lineChartView(lineChartView:JBLineChartView, widthForLineAtLineIndex lineIndex:UInt) -> CGFloat {
-    return CGFloat(1.0)
   }
 }
 
