@@ -1,16 +1,16 @@
 import UIKit
 
-let MAX_ARRAY_SIZE = 1500
-
 class AccelerationGraphView : JBLineChartView, JBLineChartViewDataSource, JBLineChartViewDelegate {
   
-  var accelerationData = [AccelerationData]() //(count: MAX_ARRAY_SIZE, repeatedValue: 0.0)
-  var accelerationIndex = MAX_ARRAY_SIZE - 1
+  var data:DataBuffer<AccelerationData>
   
   override init(frame aRect: CGRect) {
+    data = DataBuffer(maxSize: DATA_BUFFER_MAX_SIZE)
+    
     super.init(frame: aRect)
     dataSource = self
     delegate = self
+
     
     let notifer = NSNotificationCenter.defaultCenter()
     // Notifications accelerometer event are posted at a rate of 50 Hz.
@@ -18,6 +18,8 @@ class AccelerationGraphView : JBLineChartView, JBLineChartViewDataSource, JBLine
   }
 
   required init(coder aDecoder: NSCoder) {
+    data = DataBuffer(maxSize: DATA_BUFFER_MAX_SIZE)
+    
     super.init(coder: aDecoder)
   }
   
@@ -27,15 +29,9 @@ class AccelerationGraphView : JBLineChartView, JBLineChartViewDataSource, JBLine
     
     let acceleration = GLKitPolyfill.getAcceleration(accelerometerEvent)
     
-    accelerationData.append(acceleration)
-//    accelerationData[accelerationIndex] = Double(acceleration.magnitude)
-//    
-//    accelerationIndex -= 1
-//    if accelerationIndex < 0 {
-//      accelerationIndex = MAX_ARRAY_SIZE - 1
-//    }
+    data.append(acceleration)
     
-    println("acceleration (\(acceleration.x), \(acceleration.y), \(acceleration.z), \(acceleration.magnitude))")
+//    println("acceleration (\(acceleration.x), \(acceleration.y), \(acceleration.z), \(acceleration.magnitude))")
   }
   
   func numberOfLinesInLineChartView(lineChartView: JBLineChartView) -> UInt {
@@ -53,19 +49,26 @@ class AccelerationGraphView : JBLineChartView, JBLineChartViewDataSource, JBLine
   *  @return The y-axis value of the supplied line index (x-axis)
   */
   func lineChartView(lineChartView:JBLineChartView, verticalValueForHorizontalIndex horizontalIndex:UInt, atLineIndex lineIndex:UInt) -> CGFloat {
-    let acceleration = accelerationData[Int(horizontalIndex)]
-    var value:Float
-    switch(lineIndex) {
-    case 0:
-      value = acceleration.x + 4
-    case 1:
-      value = acceleration.y + 4
-    case 2:
-      value = acceleration.z + 4
-    case 3:
-      value = acceleration.magnitude + 2
-    default:
-      value = 0.0
+    var value:Float = 0.0
+    
+    if let acceleration = data[Int(horizontalIndex)] {
+      switch(lineIndex) {
+      case 0:
+        value = acceleration.x + 10
+      case 1:
+        value = acceleration.y + 10
+      case 2:
+        value = acceleration.z + 10
+      case 3:
+        value = acceleration.magnitude + 4
+      default:
+        value = 0.0
+      }
+      
+      if value < 0 {
+        println("Negative value of \(value) detected for ")
+        println("acceleration (\(acceleration.x), \(acceleration.y), \(acceleration.z), \(acceleration.magnitude))")
+      }
     }
     
     return CGFloat(value)
@@ -80,7 +83,7 @@ class AccelerationGraphView : JBLineChartView, JBLineChartViewDataSource, JBLine
   *  @return The number of vertical values for a given line in the line chart.
   */
   func lineChartView(lineChartView: JBLineChartView, numberOfVerticalValuesAtLineIndex lineIndex: UInt) -> UInt {
-    return UInt(accelerationData.count)
+    return UInt(data.maxSize)
   }
   
   /**

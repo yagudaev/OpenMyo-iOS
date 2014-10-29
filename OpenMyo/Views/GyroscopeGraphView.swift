@@ -2,9 +2,11 @@ import UIKit
 
 class GyroscopeGraphView: JBLineChartView, JBLineChartViewDelegate, JBLineChartViewDataSource {
   
-  var data = [GyroData]() //(count: MAX_ARRAY_SIZE, repeatedValue: 0.0)
+  var data:DataBuffer<GyroData>
   
   override init(frame aRect: CGRect) {
+    data = DataBuffer<GyroData>(maxSize: DATA_BUFFER_MAX_SIZE)
+    
     super.init(frame: aRect)
     dataSource = self
     delegate = self
@@ -15,6 +17,7 @@ class GyroscopeGraphView: JBLineChartView, JBLineChartViewDelegate, JBLineChartV
   }
   
   required init(coder aDecoder: NSCoder) {
+    data = DataBuffer<GyroData>(maxSize: DATA_BUFFER_MAX_SIZE)
     super.init(coder: aDecoder)
   }
   
@@ -25,7 +28,7 @@ class GyroscopeGraphView: JBLineChartView, JBLineChartViewDelegate, JBLineChartV
     let gyroData = GLKitPolyfill.getGyro(gyroEvent)
     data.append(gyroData)
     
-    println("Gyroscoope (\(gyroData.x), \(gyroData.y), \(gyroData.z))")
+//    println("Gyroscoope (\(gyroData.x), \(gyroData.y), \(gyroData.z))")
   }
   
   func numberOfLinesInLineChartView(lineChartView: JBLineChartView) -> UInt {
@@ -43,17 +46,24 @@ class GyroscopeGraphView: JBLineChartView, JBLineChartViewDelegate, JBLineChartV
   *  @return The y-axis value of the supplied line index (x-axis)
   */
   func lineChartView(lineChartView:JBLineChartView, verticalValueForHorizontalIndex horizontalIndex:UInt, atLineIndex lineIndex:UInt) -> CGFloat {
-    let gyroData = data[Int(horizontalIndex)]
-    var value:Float
-    switch(lineIndex) {
-    case 0:
-      value = gyroData.x + 360
-    case 1:
-      value = gyroData.y + 360
-    case 2:
-      value = gyroData.z + 360
-    default:
-      value = 0.0
+    var value:Float = 0.0
+    
+    if let gyroData = data[Int(horizontalIndex)] {
+      switch(lineIndex) {
+      case 0:
+        value = gyroData.x + (360 * 2)
+      case 1:
+        value = gyroData.y + (360 * 2)
+      case 2:
+        value = gyroData.z + (360 * 2)
+      default:
+        value = 0.0
+      }
+      
+      if value < 0 {
+        println("Negative value of \(value) detected for ")
+        println("Gyroscoope (\(gyroData.x), \(gyroData.y), \(gyroData.z))")
+      }
     }
     
     return CGFloat(value)
@@ -68,7 +78,7 @@ class GyroscopeGraphView: JBLineChartView, JBLineChartViewDelegate, JBLineChartV
   *  @return The number of vertical values for a given line in the line chart.
   */
   func lineChartView(lineChartView: JBLineChartView, numberOfVerticalValuesAtLineIndex lineIndex: UInt) -> UInt {
-    return UInt(data.count)
+    return UInt(data.maxSize)
   }
   
   /**

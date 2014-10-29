@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2A0D4367-CE12-485C-A92B-CCB95BA1832C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>OpenMyo-iOS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C5799279B946F5200577EF4B07E5197F26088DCB</key>
+		<string>github.com:yagudaev/OpenMyo-iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>OpenMyo-iOS.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C5799279B946F5200577EF4B07E5197F26088DCB</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:yagudaev/OpenMyo-iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C5799279B946F5200577EF4B07E5197F26088DCB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C5799279B946F5200577EF4B07E5197F26088DCB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>OpenMyo-iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

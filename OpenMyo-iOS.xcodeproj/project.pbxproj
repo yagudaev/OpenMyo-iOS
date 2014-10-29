@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		270BA99719FD04970066528B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 270BA99619FD04970066528B /* README.md */; };
 		270BA9A019FD18CB0066528B /* GLKitPolyfill.m in Sources */ = {isa = PBXBuildFile; fileRef = 270BA99F19FD18CB0066528B /* GLKitPolyfill.m */; };
+		276F81D01A00B61C004754FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276F81CF1A00B61C004754FD /* Constants.swift */; };
 		278DAE4919FCAEC500EB804B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DAE4819FCAEC500EB804B /* AppDelegate.swift */; };
 		278DAE4C19FCAEC500EB804B /* HelloMyoSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 278DAE4A19FCAEC500EB804B /* HelloMyoSwift.xcdatamodeld */; };
 		278DAE5119FCAEC500EB804B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 278DAE4F19FCAEC500EB804B /* Main.storyboard */; };
@@ -17,7 +18,7 @@
 		27A4672919FE29E800B0093F /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4672819FE29E800B0093F /* Timer.swift */; };
 		27A4672D19FE29FC00B0093F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4672B19FE29FC00B0093F /* ViewController.swift */; };
 		27A4672F19FE2A3A00B0093F /* AccelerationGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4672E19FE2A3A00B0093F /* AccelerationGraphView.swift */; };
-		27A4673119FE3C7000B0093F /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4673019FE3C7000B0093F /* RingBuffer.swift */; };
+		27A4673119FE3C7000B0093F /* DataBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4673019FE3C7000B0093F /* DataBuffer.swift */; };
 		27A4673319FE4B8B00B0093F /* OrientationGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4673219FE4B8B00B0093F /* OrientationGraphView.swift */; };
 		27A4673519FE50E100B0093F /* GyroscopeGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A4673419FE50E100B0093F /* GyroscopeGraphView.swift */; };
 		BEF4A774F5A7A6AB22605B28 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 869B6ED8684B18C6BE583A7E /* libPods.a */; };
@@ -27,6 +28,7 @@
 		270BA99619FD04970066528B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		270BA99E19FD18CB0066528B /* GLKitPolyfill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLKitPolyfill.h; sourceTree = "<group>"; };
 		270BA99F19FD18CB0066528B /* GLKitPolyfill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLKitPolyfill.m; sourceTree = "<group>"; };
+		276F81CF1A00B61C004754FD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		278DAE4319FCAEC500EB804B /* OpenMyo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenMyo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		278DAE4719FCAEC500EB804B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		278DAE4819FCAEC500EB804B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +40,7 @@
 		27A4672819FE29E800B0093F /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		27A4672B19FE29FC00B0093F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		27A4672E19FE2A3A00B0093F /* AccelerationGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerationGraphView.swift; sourceTree = "<group>"; };
-		27A4673019FE3C7000B0093F /* RingBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
+		27A4673019FE3C7000B0093F /* DataBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBuffer.swift; sourceTree = "<group>"; };
 		27A4673219FE4B8B00B0093F /* OrientationGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrientationGraphView.swift; sourceTree = "<group>"; };
 		27A4673419FE50E100B0093F /* GyroscopeGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GyroscopeGraphView.swift; sourceTree = "<group>"; };
 		869B6ED8684B18C6BE583A7E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +89,7 @@
 				270BA99E19FD18CB0066528B /* GLKitPolyfill.h */,
 				270BA99F19FD18CB0066528B /* GLKitPolyfill.m */,
 				278DAE4819FCAEC500EB804B /* AppDelegate.swift */,
+				276F81CF1A00B61C004754FD /* Constants.swift */,
 				278DAE4F19FCAEC500EB804B /* Main.storyboard */,
 				278DAE5219FCAEC500EB804B /* Images.xcassets */,
 				278DAE5419FCAEC500EB804B /* LaunchScreen.xib */,
@@ -108,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				27A4672819FE29E800B0093F /* Timer.swift */,
-				27A4673019FE3C7000B0093F /* RingBuffer.swift */,
+				27A4673019FE3C7000B0093F /* DataBuffer.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -254,11 +257,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				27A4672D19FE29FC00B0093F /* ViewController.swift in Sources */,
+				276F81D01A00B61C004754FD /* Constants.swift in Sources */,
 				27A4672F19FE2A3A00B0093F /* AccelerationGraphView.swift in Sources */,
 				278DAE4C19FCAEC500EB804B /* HelloMyoSwift.xcdatamodeld in Sources */,
 				270BA9A019FD18CB0066528B /* GLKitPolyfill.m in Sources */,
 				27A4672919FE29E800B0093F /* Timer.swift in Sources */,
-				27A4673119FE3C7000B0093F /* RingBuffer.swift in Sources */,
+				27A4673119FE3C7000B0093F /* DataBuffer.swift in Sources */,
 				27A4673319FE4B8B00B0093F /* OrientationGraphView.swift in Sources */,
 				27A4673519FE50E100B0093F /* GyroscopeGraphView.swift in Sources */,
 				270BA99719FD04970066528B /* README.md in Sources */,

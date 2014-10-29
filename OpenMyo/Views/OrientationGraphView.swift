@@ -2,9 +2,11 @@ import UIKit
 
 class OrientationGraphView: JBLineChartView, JBLineChartViewDelegate, JBLineChartViewDataSource {
   
-  var data = [OrientationData]() //(count: MAX_ARRAY_SIZE, repeatedValue: 0.0)
+  var data:DataBuffer<OrientationData>
   
   override init(frame aRect: CGRect) {
+    data = DataBuffer(maxSize: DATA_BUFFER_MAX_SIZE)
+    
     super.init(frame: aRect)
     dataSource = self
     delegate = self
@@ -15,6 +17,7 @@ class OrientationGraphView: JBLineChartView, JBLineChartViewDelegate, JBLineChar
   }
   
   required init(coder aDecoder: NSCoder) {
+    data = DataBuffer(maxSize: DATA_BUFFER_MAX_SIZE)
     super.init(coder: aDecoder)
   }
   
@@ -26,7 +29,7 @@ class OrientationGraphView: JBLineChartView, JBLineChartViewDelegate, JBLineChar
     
     data.append(angles)
     
-    println("Orientation (\(angles.pitch.radians), \(angles.yaw.radians), \(angles.roll.radians))")
+//    println("Orientation (\(angles.pitch.radians), \(angles.yaw.radians), \(angles.roll.radians))")
   }
   
   func numberOfLinesInLineChartView(lineChartView: JBLineChartView) -> UInt {
@@ -44,20 +47,27 @@ class OrientationGraphView: JBLineChartView, JBLineChartViewDelegate, JBLineChar
   *  @return The y-axis value of the supplied line index (x-axis)
   */
   func lineChartView(lineChartView:JBLineChartView, verticalValueForHorizontalIndex horizontalIndex:UInt, atLineIndex lineIndex:UInt) -> CGFloat {
-    let orientation = data[Int(horizontalIndex)]
-    var value:Double
-    let PI = 3.14
-    switch(lineIndex) {
-    case 0:
-      value = orientation.pitch.radians + PI + 0.5
-    case 1:
-      value = orientation.yaw.radians + PI + 0.5
-    case 2:
-      value = orientation.roll.radians + PI + 0.5
-    default:
-      value = 0.0
-    }
+    var value:Double = 0.0
     
+    if let orientation = data[Int(horizontalIndex)] {
+      let PI = 3.142
+      switch(lineIndex) {
+      case 0:
+        value = orientation.pitch.radians + (0.5 * PI)
+      case 1:
+        value = orientation.yaw.radians + PI
+      case 2:
+        value = orientation.roll.radians + PI
+      default:
+        value = 0.0
+      }
+      
+      if value < 0 {
+        println("Negative value of \(value) detected for ")
+        println("Orientation (\(orientation.pitch.radians), \(orientation.yaw.radians), \(orientation.roll.radians))")
+      }
+    }
+  
     return CGFloat(value)
   }
   
@@ -70,7 +80,7 @@ class OrientationGraphView: JBLineChartView, JBLineChartViewDelegate, JBLineChar
   *  @return The number of vertical values for a given line in the line chart.
   */
   func lineChartView(lineChartView: JBLineChartView, numberOfVerticalValuesAtLineIndex lineIndex: UInt) -> UInt {
-    return UInt(data.count)
+    return UInt(data.maxSize)
   }
   
   /**

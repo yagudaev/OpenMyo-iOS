@@ -9,6 +9,7 @@ class ViewController: UIViewController {
   var accelerationGraphView: AccelerationGraphView!
   var orientationGraphView: OrientationGraphView!
   var gyroscopeGraphView: GyroscopeGraphView!
+  var deviceConnected = false
   var timer:Timer!
   
   override func viewDidLoad() {
@@ -23,7 +24,7 @@ class ViewController: UIViewController {
     gyroscopeGraphView = GyroscopeGraphView(frame: CGRectMake(0, 350, 320, 130))
     view.addSubview(gyroscopeGraphView)
     
-    timer = Timer.repeat(after: 0.005, updateGraphs)
+    timer = Timer.repeat(after: 0.01, updateGraphs)
     
     bindToMyoEvents()
   }
@@ -44,22 +45,15 @@ class ViewController: UIViewController {
   }
   
   func updateGraphs() {
-    if accelerationGraphView.accelerationData.count > 0 {
+    if (deviceConnected) {
       accelerationGraphView.reloadData()
-    }
-    
-    if orientationGraphView.data.count > 0 {
       orientationGraphView.reloadData()
-    }
-    
-    if gyroscopeGraphView.data.count > 0 {
       gyroscopeGraphView.reloadData()
     }
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    accelerationGraphView.accelerationData = [] // clear the data
   }
   
   @IBAction func didTapSettings(sender: AnyObject) {
@@ -74,15 +68,13 @@ class ViewController: UIViewController {
     armLabel.text = "Perform the Sync Gesture"
     helloLabel.text = "Hello Myo"
     
-//    accelerationProgressBar.hidden = false
-//    accelerationLabel.hidden = false
+    deviceConnected = true
   }
 
   func didDisconnectDevice(notification: NSNotification) {
     helloLabel.text = ""
     armLabel.text = ""
-//    accelerationProgressBar.hidden = true
-//    accelerationLabel.hidden = true
+    deviceConnected = false
   }
 
   func didRecognizeArm(notification: NSNotification) {
