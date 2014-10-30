@@ -4,21 +4,16 @@ class GyroscopeGraphView: JBLineChartView, JBLineChartViewDelegate, JBLineChartV
   
   var data:DataBuffer<GyroData>
   
-  override init(frame aRect: CGRect) {
+  required init(coder aDecoder: NSCoder) {
     data = DataBuffer<GyroData>(maxSize: DATA_BUFFER_MAX_SIZE)
+    super.init(coder: aDecoder)
     
-    super.init(frame: aRect)
     dataSource = self
     delegate = self
     
     let notifer = NSNotificationCenter.defaultCenter()
-
+    
     notifer.addObserver(self, selector: "didRecieveGyroScopeEvent:", name: TLMMyoDidReceiveGyroscopeEventNotification, object: nil)
-  }
-  
-  required init(coder aDecoder: NSCoder) {
-    data = DataBuffer<GyroData>(maxSize: DATA_BUFFER_MAX_SIZE)
-    super.init(coder: aDecoder)
   }
   
   func didRecieveGyroScopeEvent(notification: NSNotification) {

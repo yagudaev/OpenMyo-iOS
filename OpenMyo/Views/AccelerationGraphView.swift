@@ -4,23 +4,16 @@ class AccelerationGraphView : JBLineChartView, JBLineChartViewDataSource, JBLine
   
   var data:DataBuffer<AccelerationData>
   
-  override init(frame aRect: CGRect) {
-    data = DataBuffer(maxSize: DATA_BUFFER_MAX_SIZE)
-    
-    super.init(frame: aRect)
-    dataSource = self
-    delegate = self
-
-    
-    let notifer = NSNotificationCenter.defaultCenter()
-    // Notifications accelerometer event are posted at a rate of 50 Hz.
-    notifer.addObserver(self, selector: "didRecieveAccelerationEvent:", name: TLMMyoDidReceiveAccelerometerEventNotification, object: nil)
-  }
-
   required init(coder aDecoder: NSCoder) {
     data = DataBuffer(maxSize: DATA_BUFFER_MAX_SIZE)
     
     super.init(coder: aDecoder)
+    dataSource = self
+    delegate = self
+    
+    let notifer = NSNotificationCenter.defaultCenter()
+    // Notifications accelerometer event are posted at a rate of 50 Hz.
+    notifer.addObserver(self, selector: "didRecieveAccelerationEvent:", name: TLMMyoDidReceiveAccelerometerEventNotification, object: nil)
   }
   
   func didRecieveAccelerationEvent(notification: NSNotification) {

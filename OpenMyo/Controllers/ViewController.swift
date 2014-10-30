@@ -6,25 +6,16 @@ class ViewController: UIViewController {
   @IBOutlet weak var armLabel: UILabel!
   
   var currentPose: TLMPose!
-  var accelerationGraphView: AccelerationGraphView!
-  var orientationGraphView: OrientationGraphView!
-  var gyroscopeGraphView: GyroscopeGraphView!
+  @IBOutlet weak var accelerationGraphView: AccelerationGraphView!
+  @IBOutlet weak var orientationGraphView: OrientationGraphView!
+  @IBOutlet weak var gyroscopeGraphView: GyroscopeGraphView!
   var deviceConnected = false
   var timer:Timer!
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    accelerationGraphView = AccelerationGraphView(frame: CGRectMake(0, 60, 320, 130))
-    view.addSubview(accelerationGraphView)
-
-    orientationGraphView = OrientationGraphView(frame: CGRectMake(0, 210, 320, 130))
-    view.addSubview(orientationGraphView)
     
-    gyroscopeGraphView = GyroscopeGraphView(frame: CGRectMake(0, 350, 320, 130))
-    view.addSubview(gyroscopeGraphView)
-    
-    timer = Timer.repeat(after: 0.01, updateGraphs)
+    timer = Timer.repeat(after: 0.10, updateGraphs)
     
     bindToMyoEvents()
   }

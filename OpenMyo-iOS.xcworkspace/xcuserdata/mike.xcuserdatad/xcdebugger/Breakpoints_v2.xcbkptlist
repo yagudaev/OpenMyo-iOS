@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenMyo/Views/GyroscopeGraphView.swift"
-            timestampString = "436304291.018547"
+            timestampString = "436344453.683086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "lineChartView(_:verticalValueForHorizontalIndex:atLineIndex:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenMyo/Views/OrientationGraphView.swift"
-            timestampString = "436304295.853942"
+            timestampString = "436344453.683086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "lineChartView(_:verticalValueForHorizontalIndex:atLineIndex:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenMyo/Views/AccelerationGraphView.swift"
-            timestampString = "436304299.158827"
+            timestampString = "436344347.799826"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "lineChartView(_:verticalValueForHorizontalIndex:atLineIndex:)"
             landmarkType = "5">
          </BreakpointContent>

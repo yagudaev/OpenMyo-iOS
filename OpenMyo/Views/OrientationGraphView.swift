@@ -4,21 +4,16 @@ class OrientationGraphView: JBLineChartView, JBLineChartViewDelegate, JBLineChar
   
   var data:DataBuffer<OrientationData>
   
-  override init(frame aRect: CGRect) {
+  required init(coder aDecoder: NSCoder) {
     data = DataBuffer(maxSize: DATA_BUFFER_MAX_SIZE)
+    super.init(coder: aDecoder)
     
-    super.init(frame: aRect)
     dataSource = self
     delegate = self
     
     let notifer = NSNotificationCenter.defaultCenter()
     // Notifications for orientation event are posted at a rate of 50 Hz.
     notifer.addObserver(self, selector: "didRecieveOrientationEvent:", name: TLMMyoDidReceiveOrientationEventNotification, object: nil)
-  }
-  
-  required init(coder aDecoder: NSCoder) {
-    data = DataBuffer(maxSize: DATA_BUFFER_MAX_SIZE)
-    super.init(coder: aDecoder)
   }
   
   func didRecieveOrientationEvent(notification: NSNotification) {
